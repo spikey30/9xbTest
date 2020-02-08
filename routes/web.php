@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/employeeForm', function () {
+    return view('employeeForm');
 });
+
+Route::post('/employeeForm', )
