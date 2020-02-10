@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/employeeForm', function () {
-    return view('employeeForm');
-});
+Route::get('/employeeForm', 'EmployeeController@index');
 
-Route::post('/employeeForm', )
+Route::post('/employeeForm', 'EmployeeController@update');
