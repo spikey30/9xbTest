@@ -23,24 +23,9 @@
         @endforeach
 
         <tr>
-            @if($errors->has('firstname'))
-                <td style="border: 2px solid #e74c3c">
-            @else
-                <td>
-            @endif
-            <input type="text" name="firstname" placeholder="Add new..." /></td>
-
+            <td><input type="text" name="firstname" placeholder="Add new..." /></td>
             <td><input type="text" name="lastname" placeholder="Add new..." /></td>
-
-            @if($errors->has('email'))
-                <td style="border: 2px solid #e74c3c">
-            @else
-                <td>
-            @endif
-            <input type="text" name="email" placeholder="Add new..." /></td>
-            @if($errors->has('email'))
-                <div class="error">{{ $errors->first('email') }}</div>
-            @endif
+            <td><input type="text" name="email" placeholder="Add new..." /></td>
             <td><input type="text" name="jobrole" placeholder="Add new..." /></td>
         </tr>
     </table>
