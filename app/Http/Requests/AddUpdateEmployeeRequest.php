@@ -32,6 +32,7 @@ class AddUpdateEmployeeRequest extends FormRequest
             'firstname' => ['string', 'nullable'],
             'lastname' => ['string', 'nullable'],
             'email' => ['unique:employees', 'email', 'nullable'],
+            'job_role' => ['string', 'nullable'],
         ];
     }
 }
