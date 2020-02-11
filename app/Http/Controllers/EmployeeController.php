@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Employee;
+use App\Http\Requests\AddUpdateEmployeeRequest;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -14,12 +15,11 @@ class EmployeeController extends Controller
         return view('employeeForm', ['employees' => $employees]);
     }
 
-    public function update(Request $request)
+    public function update(AddUpdateEmployeeRequest $request)
     {
-        $people = $request->input('people');
-        $newPerson = $request->input('newPerson');
+        $employees = $request->input('employee');
 
-        foreach ($people as $id=>$person) {
+        foreach ($employees as $id=>$person) {
             $employee = Employee::find($id);
 
             $employee->fill([
@@ -30,17 +30,18 @@ class EmployeeController extends Controller
             ->save();
         }
 
-        if(!empty($request->input('newPerson'))) {
+        if(!empty($request->input('firstname'))) {
             $employee = new Employee();
             $employee->fill([
-                'first_name' => $newPerson['firstname'],
-                'last_name' => $newPerson['lastname'],
-                'email' => $newPerson['email'],
-                'job_role' => $newPerson['jobrole'],
+                'first_name' => $request->input('firstname'),
+                'last_name' => $request->input('lastname'),
+                'email' => $request->input('email'),
+                'job_role' => $request->input('jobrole'),
             ]);
 
             $employee->save();
         }
+
         return redirect('employeeForm');
     }
 }
