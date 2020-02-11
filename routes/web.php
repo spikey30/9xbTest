@@ -14,3 +14,4 @@
 Route::get('/employeeForm', 'EmployeeController@index');
 
 Route::post('/employeeForm', 'EmployeeController@update');
+Route::post('/employee/delete/{employee}', 'EmployeeController@delete');
