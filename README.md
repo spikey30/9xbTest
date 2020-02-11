@@ -19,3 +19,4 @@ however i came up with something in between and have the delete function working
 
 to try and keep things neater i hav seperated out the request validation into a different class, i have also tried not to repeat any code and have used fillable wher possible
 
+The task took be about 9 hours to complete.
